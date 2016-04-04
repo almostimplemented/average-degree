@@ -39,8 +39,8 @@ class GraphState {
   private val nodes = mutable.ListBuffer[Node]()
 
   // Fast lookup for existing nodes and edges
-  val hashtagMap = mutable.HashMap[String,Node]()
-  val edgeSet  = mutable.HashSet[Edge]()
+  private val hashtagMap = mutable.HashMap[String,Node]()
+  private val edgeSet  = mutable.HashSet[Edge]()
 
   // Querying the graph
   def edgeCount = edges.length
@@ -50,7 +50,7 @@ class GraphState {
   }
 
   // Accounting methods
-  def auditEdges(): Unit = {
+  private def auditEdges(): Unit = {
     if (edges.length < 1)
       return
     val e = edges.head
@@ -63,7 +63,7 @@ class GraphState {
     auditEdges()
   }
 
-  def auditNodes(): Unit = {
+  private def auditNodes(): Unit = {
     if (nodes.length < 1)
       return
     val n = nodes.head
@@ -76,7 +76,7 @@ class GraphState {
     auditNodes()
   }
 
-  def audit(epoch: Long) = {
+  private def audit(epoch: Long) = {
     if (mostRecentTimestamp < epoch) {
       mostRecentTimestamp = epoch
       auditEdges()
@@ -86,7 +86,7 @@ class GraphState {
 
   // These two methods are for when we get something out of order
   // It is called if the received tweet is not the most recent tweet
-  def insertNodesCarefully(l: mutable.ListBuffer[Node], newNodes: mutable.ListBuffer[Node]) = {
+  private def insertNodesCarefully(l: mutable.ListBuffer[Node], newNodes: mutable.ListBuffer[Node]) = {
     if (newNodes.length > 0) {
       val timestamp = newNodes(0).timestamp
       val index = (l.length - 1) - l.reverseIterator.indexWhere {
@@ -95,7 +95,8 @@ class GraphState {
       l.insert(index, newNodes:_*)
     }
   }
-  def insertEdgesCarefully(l: mutable.ListBuffer[Edge], newEdges: mutable.ListBuffer[Edge]) = {
+  
+  private def insertEdgesCarefully(l: mutable.ListBuffer[Edge], newEdges: mutable.ListBuffer[Edge]) = {
     if (newEdges.length > 0) {
       val timestamp = newEdges(0).timestamp
       val index = (l.length - 1) - l.reverseIterator.indexWhere {
