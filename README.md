@@ -42,7 +42,7 @@ updates to existing edges/nodes. The "updates" simply reflect the new timestamp.
 We are led to the following high level solution:
 
 - For each streamed tweet:
-    - If the new timestamp is more than an hour older than the current timestamp:
+    - If the new timestamp is more than a minute older than the current timestamp:
     	-  move onto the next tweet.
     - Otherwise, if the timestamp is greater than the current most recent timestamp:
     	- remove expired graph components and update the most recent timestamp.
@@ -61,7 +61,7 @@ This has the benefit of saving me a lot of IO programming and makes the code muc
 The graph is defined inside the class `GraphState`. Referring back to my high level solution,
 the method `GraphState.processHashtags(Set[String],Long)` takes as input a set of hashtags
 and a timestamp (milliseconds since the epoch). Internally, it has two `ListBuffer` objects
-which store the past hour's set of nodes and edges. Through careful insertion/deletion logic,
+which store the past minute's set of nodes and edges. Through careful insertion/deletion logic,
 these lists remain in sorted order from oldest to newest. This provides an efficient way to
 inspect which nodes/edges are expired. The function `GraphState.audit(Long)` performs this inspection.
 It consists of first checking if the passed `Long` is more recent that the current timestamp.
