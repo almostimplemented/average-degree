@@ -55,9 +55,16 @@ We are led to the following high level solution:
 
 Implementing a solution
 -----------------------
-I decided to implement my solution in Scala. I have never written a full program in Scala, but I recently started learning the language via Martin Odersky's book "Programming in Scala, 2nd ed." (moving at my own pace, about 1/3 of the way through). At work, I program in Java, so that is my goto language for these sorts of challenges, since I have been learning on the job Java idioms and best practices. 
+I decided to implement my solution in Scala. I have never written a full program in
+Scala, but I recently started learning the language via Martin Odersky's book
+"Programming in Scala, 2nd ed." (moving at my own pace, about 1/3 of the way through).
+At work, I program in Java, so that is my goto language for these sorts of challenges,
+since I have been learning on the job Java idioms and best practices. 
 
-As much as I like Java, I find it very verbose. This is a blessing and a curse, because I feel like I have a good idea of what the JVM is doing with my code, but I also loathe having to generate so much boilerplate code. Scala on the other hand is very concise, and it seems to be catching on as a choice language for distributed systems development. 
+As much as I like Java, I find it very verbose. This is a blessing and a curse, because
+I feel like I have a good idea of what the JVM is doing with my code, but I also loathe
+having to generate so much boilerplate code. Scala on the other hand is very concise,
+and it seems to be catching on as a choice language for distributed systems development. 
 
 The only dependency my project has is the `json4s` library for easy JSON parsing.
 This has the benefit of saving me a lot of IO programming and makes the code much cleaner.
@@ -77,6 +84,11 @@ If the received tweet is the latest one, the insertions are easy: we just append
 Otherwise, we collect the received hashtags into a list, walk backwards from the end of the list
 until we find an older timestamp, and then insert all objects at once. We also take care to not 
 remove an existing, more recent copy of a new node/edge encountered out of order.
+
+Two hash-based collections are maintained to expedite the check for existing nodes (hashtags). Nodes
+are implemented as a composite class of `String` and `Long` (hashtag and timestamp), and edges are
+a composition of two `String`s and a `Long`. The `equals` and `hashCode` methods for these two classes
+are overridden to ignore the timestamp, and in the case of edges to encode undirectedness.
 
 And thats pretty much it! The node and edge lists have `length` accessor fields, and from those we
 compute `averageDegree = (2.0 * edges.length) / nodes.length` (unless of course there are no nodes).
