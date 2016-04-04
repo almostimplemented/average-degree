@@ -87,24 +87,29 @@ class GraphState {
   // These two methods are for when we get something out of order
   // It is called if the received tweet is not the most recent tweet
   def insertNodesCarefully(l: mutable.ListBuffer[Node], newNodes: mutable.ListBuffer[Node]) = {
-    val timestamp = newNodes(0).timestamp
-    val index = (l.length - 1) - l.reverseIterator.indexWhere {
-      (n: Node) => n.timestamp < timestamp
+    if (newNodes.length > 0) {
+      val timestamp = newNodes(0).timestamp
+      val index = (l.length - 1) - l.reverseIterator.indexWhere {
+        (n: Node) => n.timestamp < timestamp
+      }
+      l.insert(index, newNodes:_*)
     }
-    l.insert(index, newNodes:_*)
   }
   def insertEdgesCarefully(l: mutable.ListBuffer[Edge], newEdges: mutable.ListBuffer[Edge]) = {
-    val timestamp = newEdges(0).timestamp
-    val index = (l.length - 1) - l.reverseIterator.indexWhere {
-      (e: Edge) => e.timestamp < timestamp
+    if (newEdges.length > 0) {
+      val timestamp = newEdges(0).timestamp
+      val index = (l.length - 1) - l.reverseIterator.indexWhere {
+        (e: Edge) => e.timestamp < timestamp
+      }
+      l.insert(index, newEdges:_*)
     }
-    l.insert(index, newEdges:_*)
   }
 
   def processHashtags(hashtags: Set[String], epoch: Long) : Unit = {
     // First, remove any expired graph elements
     audit(epoch)
 
+    // Short circuit if no edges are present
     if (hashtags.size < 2) return
 
     // First deal with "in order" tweets
