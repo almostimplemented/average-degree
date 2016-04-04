@@ -222,4 +222,5 @@ object Main extends App {
     input.close()
   }
   val t1 = System.nanoTime()
+  println("Elapsed time: " + (t1 - t0) + "ns")
 }
