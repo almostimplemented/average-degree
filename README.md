@@ -8,13 +8,10 @@ Hello, and thank you for being here to grade my submission!
 My `run.sh` script simply calls `sbt run`, and I am new to the sbt tool (as I explain below,
 this is my first real Scala project :] ).
 
-I have tested the processing rate of the code. If I use the timestamp field from the tweet,
-the code block iterating over 22554 tweets took 3 seconds. According to
-www.internetlivestats.com/twitter-statistics, there are roughly 6000 tweets generated per second
-so my solution appears to be efficient enough to hook-up to the live stream. I noticed a bit
-of a performance drop that I attribute to parsing the epoch `Long` from the datestring, but the
-code still seems pretty quick to me. I can certainly name places for some multithreaded optimizations,
-but really that is not necessary if we read from the `timestamp_ms` field.
+I have tested the processing rate of the code. The program can iterate over 22554 tweets in 3 seconds.
+From www.internetlivestats.com/twitter-statistics, I see there are ~6000 tweets generated per second
+so my solution appears to be efficient enough to hook-up to the live stream. FYI, the "big-input" test
+does not validate the solution to be correct; it is simply there for checking processing time.
 
 One other detail: the Java/Scala formatted double defaults to rounding up. In the assignment's
 `README.md` file, `5/3` is printed as `1.66`, whereas my program output as `1.67`. I hope this small
