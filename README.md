@@ -16,6 +16,10 @@ of a performance drop that I attribute to parsing the epoch `Long` from the date
 code still seems pretty quick to me. I can certainly name places for some multithreaded optimizations,
 but really that is not necessary if we read from the `timestamp_ms` field.
 
+One other detail: the Java/Scala formatted double defaults to rounding up. In the assignment's
+`README.md` file, `5/3` is printed as `1.66`, whereas my program output as `1.67`. I hope this small
+detail does not impact your ability to grade nor my score.
+
 Thinking through the problem
 ----------------------------
 
