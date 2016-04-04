@@ -1,0 +1,39 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mInvalidated products: Set()[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.8[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.8[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 7bcad25d, interfacing (CompilerInterface) with Scala compiler version 2.11.8[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/classes:/Users/AE/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/target/scala-2.11/classes:/Users/AE/.ivy2/cache/org.json4s/json4s-native_2.11/jars/json4s-native_2.11-3.3.0.jar:/Users/AE/.ivy2/cache/org.json4s/json4s-core_2.11/jars/json4s-core_2.11-3.3.0.jar:/Users/AE/.ivy2/cache/org.json4s/json4s-ast_2.11/jars/json4s-ast_2.11-3.3.0.jar:/Users/AE/.ivy2/cache/org.json4s/json4s-scalap_2.11/jars/json4s-scalap_2.11-3.3.0.jar:/Users/AE/.ivy2/cache/com.thoughtworks.paranamer/paranamer/bundles/paranamer-2.8.jar:/Users/AE/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.5.jar[0m
+[0m[[0mdebug[0m] [0mScala compilation took 7.310789061 s[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/AE/Documents/academic_work/programming/puzzles/average_degree/insight_testsuite/temp/src/main/scala/Main.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, format, hashtagMap, GraphState, ONE_HOUR, edgeSet, wait, copy$default$2, $asInstanceOf, averageDegree, t0, timestamp, writer, productArity, equals, edgeCount, asInstanceOf, executionStart, nodeCount, synchronized, $isInstanceOf, Node, auditNodes, processHashtags, has, canEqual, main, productPrefix, notifyAll, auditEdges, isInstanceOf, v, <init>, hashtag, nodes, ==, clone, copy$default$3, copy, Main, toString, args, graph, audit, !=, edges, getClass, copy$default$1, Edge, w, t1, ne, input, mostRecentTimestamp, eq, productIterator, delayedInit, ##, finalize, productElement, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
