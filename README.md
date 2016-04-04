@@ -6,7 +6,7 @@ Hello, and thank you for being here to grade my submission!
 
 *Important note*: I modified `insight_testsuite/run_tests.sh` to `cp build.sbt` to `temp`.
 My `run.sh` script simply calls `sbt run`, and I am new to the sbt tool (as I explain below,
-this is my first real Scala project :]).
+this is my first real Scala project :] ).
 
 I have tested the processing rate of the code. If I use the timestamp field from the tweet,
 the code block iterating over 22554 tweets took 3 seconds. According to
