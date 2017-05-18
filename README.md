@@ -89,3 +89,4 @@ are overridden to ignore the timestamp, and in the case of edges to encode undir
 
 And thats pretty much it! The node and edge lists have `length` accessor fields, and from those we
 compute `averageDegree = (2.0 * edges.length) / nodes.length` (unless of course there are no nodes).
+
